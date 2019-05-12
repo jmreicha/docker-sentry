@@ -19,23 +19,23 @@ steps:
     password:
       from_secret: DH_PASS
 
----
-kind: pipeline
-name: build amd64
-
-platform:
-  os: linux
-  arch: amd64
-
-steps:
-- name: build_and_publish_image
-  image: plugins/docker
-  settings:
-    repo: jmreicha/sentry
-    tags: 9.1-amd64
-    dockerfile: 9.1/Dockerfile
-    context: 9.1
-    username:
-      from_secret: DH_USER
-    password:
-      from_secret: DH_PASS
+#---
+#kind: pipeline
+#name: build amd64
+#
+#platform:
+#  os: linux
+#  arch: amd64
+#
+#steps:
+#- name: build_and_publish_image
+#  image: plugins/docker
+#  settings:
+#    repo: jmreicha/sentry
+#    tags: 9.1-amd64
+#    dockerfile: 9.1/Dockerfile
+#    context: 9.1
+#    username:
+#      from_secret: DH_USER
+#    password:
+#      from_secret: DH_PASS
