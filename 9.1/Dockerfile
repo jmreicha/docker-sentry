@@ -6,7 +6,7 @@ RUN groupadd -r sentry && useradd -r -m -g sentry sentry
 RUN apt-get update && apt-get install -y --no-install-recommends \
         gcc \
         git \
-        zlib \
+        zlib1g \
         libffi-dev \
         libjpeg-dev \
         libpq-dev \
