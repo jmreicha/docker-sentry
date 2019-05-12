@@ -56,7 +56,7 @@ RUN set -x \
     " \
     && apt-get update && apt-get install -y --no-install-recommends $fetchDeps && rm -rf /var/lib/apt/lists/* \
     && wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-arm64" \
-    && wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini.asc" \
+    && wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-arm64.asc" \
     && export GNUPGHOME="$(mktemp -d)" \
     && for key in \
       595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 \
