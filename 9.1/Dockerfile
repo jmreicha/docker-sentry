@@ -89,7 +89,9 @@ RUN set -x \
         dirmngr \
         gnupg \
         wget \
-        zlib1g-dev \
+        libtiff5-dev libjpeg8-dev zlib1g-dev \
+        libfreetype6-dev liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev \
+        tcl8.6-dev tk8.6-dev python-tk \
     " \
     && apt-get update && apt-get install -y --no-install-recommends $buildDeps && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /usr/src/sentry \
