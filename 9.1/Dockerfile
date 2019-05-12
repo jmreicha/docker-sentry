@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libxslt-dev \
         libyaml-dev \
         pkg-config \
-        zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Sane defaults for pip
@@ -86,9 +85,11 @@ ENV SENTRY_VERSION 9.1.1
 RUN set -x \
     && buildDeps=" \
         g++ \
+        cargo \
         dirmngr \
         gnupg \
         wget \
+        zlib1g-dev \
     " \
     && apt-get update && apt-get install -y --no-install-recommends $buildDeps && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /usr/src/sentry \
