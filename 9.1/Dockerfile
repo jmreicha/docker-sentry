@@ -6,6 +6,7 @@ RUN groupadd -r sentry && useradd -r -m -g sentry sentry
 RUN apt-get update && apt-get install -y --no-install-recommends \
         gcc \
         git \
+        zlib \
         libffi-dev \
         libjpeg-dev \
         libpq-dev \
@@ -55,8 +56,8 @@ RUN set -x \
         wget \
     " \
     && apt-get update && apt-get install -y --no-install-recommends $fetchDeps && rm -rf /var/lib/apt/lists/* \
-    && wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-arm64" \
-    && wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-arm64.asc" \
+    && wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$(dpkg --print-architecture)" \
+    && wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v$TINI_VERSION/tini-$(dpkg --print-architecture).asc" \
     && export GNUPGHOME="$(mktemp -d)" \
     && for key in \
       595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 \
