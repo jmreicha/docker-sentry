@@ -89,7 +89,7 @@ RUN set -x \
         dirmngr \
         gnupg \
         wget \
-        libtiff5-dev libjpeg8-dev zlib1g-dev \
+        libtiff-dev zlib1g-dev \
         libfreetype6-dev liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev \
         tcl8.6-dev tk8.6-dev python-tk \
     " \
